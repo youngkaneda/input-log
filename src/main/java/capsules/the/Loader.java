@@ -7,13 +7,15 @@ import capsules.the.listener.KeyboardListener;
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
 
-import javax.swing.JFrame;
+import javax.swing.JDialog	;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import java.awt.Dimension;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class Loader {
 
@@ -23,13 +25,19 @@ public class Loader {
         Logger logger = Logger.getLogger(GlobalScreen.class.getPackage().getName());
         logger.setLevel(Level.OFF);
         // Setting up the window where the inputs will be displayed.
-        JFrame window = new JFrame();
+        JDialog window = new JDialog();
         window.setContentPane(new JPanel());
-        window.setSize(new Dimension(70, 590));
+        window.setSize(new Dimension(70, 600));
         window.setResizable(false);
         window.setVisible(true);
         window.setLocationRelativeTo(null);
-        window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        window.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		window.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosed(WindowEvent e) {
+				System.exit(0);
+			}
+		});
         //
         bus.subscribe(KeyboardEvent.class, new InputEventSubscriber(window));
         //
