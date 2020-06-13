@@ -25,7 +25,7 @@ public class Loader {
         // Setting up the window where the inputs will be displayed.
         JFrame window = new JFrame();
         window.setContentPane(new JPanel());
-        window.setSize(new Dimension(90, 590));
+        window.setSize(new Dimension(70, 590));
         window.setResizable(false);
         window.setVisible(true);
         window.setLocationRelativeTo(null);

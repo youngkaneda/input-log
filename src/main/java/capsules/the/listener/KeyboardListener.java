@@ -18,13 +18,6 @@ public class KeyboardListener implements NativeKeyListener {
     @Override
     public void nativeKeyPressed(NativeKeyEvent nativeKeyEvent) {
         bus.fireEvent(new KeyboardEvent(nativeKeyEvent.getKeyCode(), nativeKeyEvent.getKeyText(nativeKeyEvent.getKeyCode())));
-        if (nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_ESCAPE) {
-            try {
-                GlobalScreen.unregisterNativeHook();
-            } catch (NativeHookException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     @Override
