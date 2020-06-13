@@ -31,7 +31,7 @@ public class InputEventSubscriber extends EventSubscriber<KeyboardEvent> {
                     // Loading the input correspondent image.
                     InputStream is = getClass().getClassLoader().getResourceAsStream("sprites/" + k + ".png");
                     JLabel move = new JLabel(new ImageIcon(is.readAllBytes()));
-                    move.setPreferredSize(new Dimension(100, 30));
+                    move.setPreferredSize(new Dimension(90, 30));
                     // Adding it to the window.
                     window.getContentPane().add(move, 0);
                     window.revalidate();
