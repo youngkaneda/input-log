@@ -11,6 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import java.awt.Dimension;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseEvent;
+import java.awt.Point;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,6 +37,20 @@ public class Loader {
         window.setVisible(true);
         window.setLocationRelativeTo(null);
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		window.addMouseMotionListener(new MouseMotionListener() {
+			@Override
+			public void mouseDragged(MouseEvent event) {
+				Point point = event.getPoint();
+				Dimension dimension = window.getContentPane().getSize();
+				swindow.setLocation(
+					event.getXOnScreen(),
+					event.getYOnScreen()
+				);
+			}
+			@Override
+			public void mouseMoved(MouseEvent event) {
+			}
+		});
         //
         bus.subscribe(KeyboardEvent.class, new InputEventSubscriber(window));
         //
