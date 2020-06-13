@@ -7,7 +7,7 @@ import capsules.the.listener.KeyboardListener;
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
 
-import javax.swing.JDialog	;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import java.awt.Dimension;
@@ -25,9 +25,9 @@ public class Loader {
         Logger logger = Logger.getLogger(GlobalScreen.class.getPackage().getName());
         logger.setLevel(Level.OFF);
         // Setting up the window where the inputs will be displayed.
-        JDialog window = new JDialog();
+        JFrame window = new JFrame();
         window.setContentPane(new JPanel());
-        window.setSize(new Dimension(70, 600));
+        window.setSize(new Dimension(100, 600));
         window.setResizable(false);
         window.setVisible(true);
         window.setLocationRelativeTo(null);

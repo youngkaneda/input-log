@@ -3,7 +3,7 @@ package capsules.the.event;
 import org.jnativehook.keyboard.NativeKeyEvent;
 
 import javax.swing.JLabel;
-import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import java.awt.Dimension;
 import java.io.IOException;
@@ -12,10 +12,10 @@ import java.util.Properties;
 
 public class InputEventSubscriber extends EventSubscriber<KeyboardEvent> {
 
-    private final JDialog window;
+    private final JFrame window;
     private final Properties mappedButtons;
 
-    public InputEventSubscriber(JDialog window) throws IOException {
+    public InputEventSubscriber(JFrame window) throws IOException {
         this.window = window;
         this.mappedButtons = new Properties();
         this.mappedButtons.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
@@ -31,7 +31,7 @@ public class InputEventSubscriber extends EventSubscriber<KeyboardEvent> {
                     // Loading the input correspondent image.
                     InputStream is = getClass().getClassLoader().getResourceAsStream("sprites/" + k + ".png");
                     JLabel move = new JLabel(new ImageIcon(is.readAllBytes()));
-                    move.setPreferredSize(new Dimension(70, 30));
+                    move.setPreferredSize(new Dimension(100, 30));
                     // Adding it to the window.
                     window.getContentPane().add(move, 0);
                     window.revalidate();
