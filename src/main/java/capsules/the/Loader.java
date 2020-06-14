@@ -1,25 +1,23 @@
 package capsules.the;
 
-import capsules.the.event.EventBus;
-import capsules.the.event.InputEventSubscriber;
-import capsules.the.event.KeyboardEvent;
+import capsules.the.bus.EventBus;
+import capsules.the.bus.subscriber.InputEventSubscriber;
+import capsules.the.bus.event.KeyboardEvent;
 import capsules.the.listener.KeyboardListener;
+import capsules.the.listener.MouseDragAdapter;
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
-import java.awt.Dimension;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseEvent;
-import java.awt.Point;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import javax.swing.UIManager;
 
 public class Loader {
 
@@ -29,7 +27,7 @@ public class Loader {
         Logger logger = Logger.getLogger(GlobalScreen.class.getPackage().getName());
         logger.setLevel(Level.OFF);
         // Setting up the window where the inputs will be displayed. 
-        JFrame window = new JFrame();
+        JFrame window = new JFrame("Input log");
 		window.setUndecorated(true);
         window.setContentPane(new JPanel());
         window.setSize(new Dimension(90, 600));
@@ -37,21 +35,10 @@ public class Loader {
         window.setVisible(true);
         window.setLocationRelativeTo(null);
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		window.addMouseMotionListener(new MouseMotionListener() {
-			@Override
-			public void mouseDragged(MouseEvent event) {
-				Point point = event.getPoint();
-				Dimension dimension = window.getContentPane().getSize();
-				swindow.setLocation(
-					event.getXOnScreen(),
-					event.getYOnScreen()
-				);
-			}
-			@Override
-			public void mouseMoved(MouseEvent event) {
-			}
-		});
-        //
+        MouseDragAdapter adapter = new MouseDragAdapter(window);
+        window.addMouseListener(adapter);
+        window.addMouseMotionListener(adapter);
+		//
         bus.subscribe(KeyboardEvent.class, new InputEventSubscriber(window));
         //
         GlobalScreen.registerNativeHook();

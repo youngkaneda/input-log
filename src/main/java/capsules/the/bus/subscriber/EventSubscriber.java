@@ -1,4 +1,6 @@
-package capsules.the.event;
+package capsules.the.bus.subscriber;
+
+import capsules.the.bus.event.Event;
 
 public abstract class EventSubscriber<T extends Event> {
 

@@ -1,4 +1,7 @@
-package capsules.the.event;
+package capsules.the.bus;
+
+import capsules.the.bus.event.Event;
+import capsules.the.bus.subscriber.EventSubscriber;
 
 import java.util.*;
 

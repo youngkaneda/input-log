@@ -1,4 +1,4 @@
-package capsules.the.event;
+package capsules.the.bus.event;
 
 public class KeyboardEvent implements Event {
 

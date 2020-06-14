@@ -1,5 +1,6 @@
-package capsules.the.event;
+package capsules.the.bus.subscriber;
 
+import capsules.the.bus.event.KeyboardEvent;
 import org.jnativehook.keyboard.NativeKeyEvent;
 
 import javax.swing.JLabel;

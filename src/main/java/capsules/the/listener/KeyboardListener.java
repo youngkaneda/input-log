@@ -1,9 +1,7 @@
 package capsules.the.listener;
 
-import capsules.the.event.EventBus;
-import capsules.the.event.KeyboardEvent;
-import org.jnativehook.GlobalScreen;
-import org.jnativehook.NativeHookException;
+import capsules.the.bus.EventBus;
+import capsules.the.bus.event.KeyboardEvent;
 import org.jnativehook.keyboard.NativeKeyEvent;
 import org.jnativehook.keyboard.NativeKeyListener;
 
