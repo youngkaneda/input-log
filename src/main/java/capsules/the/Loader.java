@@ -11,10 +11,7 @@ import org.jnativehook.NativeHookException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
-import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseEvent;
+import java.awt.Dimension;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,14 +28,12 @@ public class Loader {
 		window.setUndecorated(true);
         window.setContentPane(new JPanel());
         window.setSize(new Dimension(90, 600));
-        window.setResizable(false);
         window.setVisible(true);
         window.setLocationRelativeTo(null);
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         MouseDragAdapter adapter = new MouseDragAdapter(window);
         window.addMouseListener(adapter);
         window.addMouseMotionListener(adapter);
-		//
         bus.subscribe(KeyboardEvent.class, new InputEventSubscriber(window));
         //
         GlobalScreen.registerNativeHook();
