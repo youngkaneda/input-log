@@ -23,7 +23,7 @@ lk=VC_KP_4
 ```
 *I used the JNativeHook variable names for the keyboard keys, it was more readalbe, and because use the exact code values could cause erros, since different OS's use different values for each key.*
 
-Said that you can use your own sprites, map it in your own way, ``.properties``, ``.json``..., just fork and change.
+Said that you can use your own sprites, add new buttons, remove buttons, map it in your own way, ``.properties``, ``.json`` ..., just fork and change.
 
 ## Screenshot
 ![screenshot](ss.png)
