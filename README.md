@@ -26,7 +26,7 @@ lk=VC_KP_4
 Said that you can use your own sprites, map it in your own way, .proerties, .json..., just fork and change.
 
 ## Screenshot
-
+![screenshot](ss.png)
 
 ## TODO
 1. Create an option for the user map they buttons, they coming from any input device, controllers, arcades, keyboard.
