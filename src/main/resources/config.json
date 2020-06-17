@@ -1,42 +1,42 @@
 [
   {
     "keyCode": 57,
-    "sprite": "./sprites/up.png"
+    "sprite": "sprites/up.png"
   },
   {
     "keyCode": 31,
-    "sprite": "./sprites/down.png"
+    "sprite": "sprites/down.png"
   },
   {
     "keyCode": 30,
-    "sprite": "./sprites/left.png"
+    "sprite": "sprites/left.png"
   },
   {
     "keyCode": 32,
-    "sprite": "./sprites/right.png"
+    "sprite": "sprites/right.png"
   },
   {
     "keyCode": 75,
-    "sprite": "./sprites/lk.png"
+    "sprite": "sprites/lk.png"
   },
   {
     "keyCode": 76,
-    "sprite": "./sprites/mk.png"
+    "sprite": "sprites/mk.png"
   },
   {
     "keyCode": 77,
-    "sprite": "./sprites/hk.png"
+    "sprite": "sprites/hk.png"
   },
   {
     "keyCode": 71,
-    "sprite": "./sprites/lp.png"
+    "sprite": "sprites/lp.png"
   },
   {
     "keyCode": 72,
-    "sprite": "./sprites/mp.png"
+    "sprite": "sprites/mp.png"
   },
   {
     "keyCode": 73,
-    "sprite": "./sprites/hp.png"
+    "sprite": "sprites/hp.png"
   }
 ]
