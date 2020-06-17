@@ -13,17 +13,19 @@ $ java -jar target/input-log-1.0.jar
 
 ## How configure buttons.
 
-For mapping the buttons, I was through some hardcoded ways, on ``config.properties`` in resources folder, just write the key name, and for wich button; each propertie key means the button sprite file name that I used.
+For mapping the buttons, I created a json filed called ``config.json`` in resources folder, just write a object with the key code, and where are the sprite for that button.
 ```
+[
+  {
+    "keyCode": 76,
+    "sprite": "path/to/file.png"
+  },
 ...
-up=VC_SPACE
-lp=VC_KP_7
-lk=VC_KP_4
-...
+]
 ```
-*I used the JNativeHook variable names for the keyboard keys, it was more readalbe, and because use the exact code values could cause erros, since different OS's use different values for each key.*
+*I used the JNativeHook key code values for the keyboard keys.*
 
-Said that you can use your own sprites, add new buttons, remove buttons, map it in your own way, ``.properties``, ``.json`` ..., just fork and change.
+Said that you can use your own sprites, add new buttons, remove buttons, map it in your own way, just fork and change.
 
 ## Screenshot
 ![screenshot](ss.png)
