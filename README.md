@@ -39,6 +39,7 @@ A lot of training modes hava input display, but they are built-in, and I wanted 
 ## TODO
 1. Create an option for the user map they buttons, they coming from any input device, controllers, arcades, keyboard.
 2. ~~Refact the default button mapping.~~
+3. Add more input commands, like DR, DL, UL, UR, or even QCB, QCF...
 
 ## What I learned
 Well I could refresh some past contents in my head, writing a event bus, listeners, and I had to implement by myself some option for the JFrame since I was using an undecorated one for design purposes. I wrote a drag listener to move the window through the screen, and implemented one bottom border resize listener, since the user dragged the window in the bottom border, the listener recognized and resized the window according the user drag, I had to use some high school vectorial math, so, was a good chance to remember.
